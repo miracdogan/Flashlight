@@ -8,12 +8,34 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var lightButton: UIButton!
+    var isLightOn = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        updateUI()
     }
-
+    
+    @IBAction func buttonTapped(_ button: UIButton) {
+        isLightOn.toggle()
+        updateUI()
+    }
+    
+    func updateUI(){
+        view.backgroundColor = isLightOn ? .white : .black
+        
+        /*
+         if isLightOn{
+             view.backgroundColor = .white
+             lightButton.setTitle("Off", for: .normal)
+         } else {
+             view.backgroundColor = .black
+             lightButton.setTitle("On", for: .normal)
+         }
+         */
+        
+    }
 
 }
 
